@@ -15,6 +15,7 @@ def animate(f):
     x_tree: list[float] = [math.cos(i/5+f/10)*(k-i) for i in range(k)]
     y_tree: list[float] = [math.sin(i/5+f/10)*(k-i) for i in range(k)]
     z_tree: list[float] = [i for i in range(k)]
+    
     ax.scatter(x_tree, y_tree, z_tree, c="green", marker="^")
 
     step: int = 3
@@ -22,6 +23,7 @@ def animate(f):
     z_garland: list[float] = [i for i in range(1, k, step)]
     x_garland: list[float] = [math.cos(i/5+2+f/10)*(k-i+10) for i in range(1,k,step)]
     y_garland: list[float] = [math.sin(i/5+2+f/10)*(k-i+10) for i in range(1,k,step)]
+    
     colors: list[str] = ["#" + ''.join([random.choice('0123456789ABCDEF') for _ in range(6)]) for _ in range(len(z_garland))]
     ax.scatter(x_garland, y_garland, z_garland, c=colors, marker='o', s=40)
 
